@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shivang Testing Agency | Mock Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #0d47a1;
+            --secondary: #1976d2;
+            --accent: #64b5f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            padding: 14px 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        header span {
+            color: #c8e6c9;
+            font-weight: 400;
+        }
+
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            padding: 60px;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .welcome {
+            color: #fff;
+            opacity: 0;
+            transform: translateX(-60px);
+            animation: fadeInLeft 1.2s ease forwards;
+        }
+
+        .welcome h1 {
+            font-size: 44px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .welcome h1 span {
+            color: #ffca28;
+        }
+
+        .welcome p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 520px;
+        }
+
+        .line {
+            width: 120px;
+            height: 4px;
+            background: #ffca28;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.18);
+            backdrop-filter: blur(18px);
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            opacity: 0;
+            transform: translateX(60px);
+            animation: fadeInRight 1.2s ease forwards;
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        label {
+            color: #e3f2fd;
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 10px;
+            border: none;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .start-btn {
+            width: 100%;
+            padding: 12px;
+            background: #0b4ea2;
+            color: #fff;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .start-btn:hover {
+            background: #083b7a;
+        }
+
+        .small-text {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #e1f5fe;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #e3f2fd;
+            font-size: 14px;
+            background: rgba(0,0,0,0.2);
+        }
+
+        @keyframes fadeInLeft {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+            .welcome h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🟢 <strong>Shivang Testing Agency</strong>
+    <span>Excellence in Assessment</span>
+</header>
+
+<main class="container">
+
+    <!-- LEFT -->
+    <section class="welcome">
+        <h1>Welcome <span>💫 𝑻𝒘𝒊𝒏𝒌𝒍𝒆 💎✨!</span></h1>
+        <p>
+            Believe in yourself and your abilities.  
+            Every mock test you attempt is one step closer to real exam success.
+        </p>
+
+        <div class="line"></div>
+
+        <p>
+            Welcome to <strong>Shivang Testing Agency</strong>,  
+            your trusted Test Practice Centre.
+        </p>
+    </section>
+
+    <!-- RIGHT -->
+    <section class="card">
+        <h3>Select exam you would like to appear</h3>
+
+        <label>Exam</label>
+        <select disabled>
+            <option>UPP (Police)</option>
+        </select>
+
+        <label>Paper</label>
+        <select id="subject">
+            <option value="">-- Select --</option>
+            <option value="gk">GK + Current Affairs</option>
+            <option value="hindi">General Hindi</option>
+            <option value="math">Math + Reasoning + Mental Aptitude</option>
+        </select>
+
+        <button class="start-btn" onclick="startTest()">START MOCK TEST</button>
+
+        <div class="small-text">
+            For STA Mock Tests of December 2026 onwards, please click here
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    © All Rights Reserved – Shivang Testing Agency
+</footer>
+
+<script>
+function startTest() {
+    const subject = document.getElementById("subject").value;
+
+    if (subject === "") {
+        alert("Please select a subject");
+        return;
+    }
+
+    localStorage.setItem("selectedSubject", subject);
+    window.location.href = "instructions.html";
+}
+</script>
+
+</body>
+</html>

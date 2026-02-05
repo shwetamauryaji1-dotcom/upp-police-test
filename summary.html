@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Summary | UPP (Police)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(180deg,#eef5ff,#ffffff);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  width:92%;
+  max-width:1200px;
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+  padding:30px 40px 40px;
+}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-bottom:20px;
+  background:linear-gradient(90deg,#3b82f6,#ef4444) bottom/100% 3px no-repeat;
+}
+
+.header-left{
+  font-size:16px;
+  color:#475569;
+  line-height:1.6;
+}
+
+.header-left b{ color:#111827; }
+
+.time-over{
+  background:#ef4444;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:20px;
+  font-weight:600;
+  font-size:14px;
+}
+
+.title{
+  text-align:center;
+  font-size:34px;
+  font-weight:600;
+  margin:35px 0 30px;
+  color:#1e293b;
+}
+
+.cards{
+  display:flex;
+  gap:22px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.card{
+  width:190px;
+  border-radius:20px;
+  padding:22px 18px;
+  text-align:center;
+  box-shadow:0 18px 40px rgba(0,0,0,.08);
+}
+
+.card .icon{
+  width:48px;
+  height:48px;
+  margin:0 auto 12px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+}
+
+.card h4{
+  font-size:15px;
+  font-weight:500;
+  color:#334155;
+}
+
+.card h2{
+  font-size:34px;
+  margin-top:8px;
+  font-weight:700;
+}
+
+.blue{background:linear-gradient(135deg,#3b82f6,#60a5fa);}
+.blue .icon{background:#2563eb;}
+
+.green{background:linear-gradient(135deg,#4ade80,#22c55e);}
+.green .icon{background:#16a34a;}
+
+.orange{background:linear-gradient(135deg,#facc15,#f59e0b);}
+.orange .icon{background:#d97706;}
+
+.purple{background:linear-gradient(135deg,#a78bfa,#8b5cf6);}
+.purple .icon{background:#7c3aed;}
+
+.red{background:linear-gradient(135deg,#f87171,#ef4444);}
+.red .icon{background:#dc2626;}
+
+.note{
+  text-align:center;
+  margin:40px 0 25px;
+  color:#334155;
+  font-size:17px;
+}
+
+.note b{
+  display:block;
+  margin-top:5px;
+}
+
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+}
+
+.btn{
+  min-width:140px;
+  padding:14px 0;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  border:none;
+}
+
+.btn-no{
+  background:#fff;
+  border:2px solid #c7d2fe;
+  color:#334155;
+}
+
+.btn-yes{
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      Candidate : <b>Twinkle</b><br>
+      Exam : <b>UPP (Police)</b><br>
+      Subject : <b id="subjectName"></b>
+    </div>
+    <div class="time-over">TIME OVER</div>
+  </div>
+
+  <div class="title">Exam Summary</div>
+
+  <div class="cards">
+    <div class="card blue">
+      <div class="icon">?</div>
+      <h4>No of Questions</h4>
+      <h2 id="totalQ">0</h2>
+    </div>
+
+    <div class="card green">
+      <div class="icon">✓</div>
+      <h4>Answered</h4>
+      <h2 id="answered">0</h2>
+    </div>
+
+    <div class="card orange">
+      <div class="icon">✕</div>
+      <h4>Not Answered</h4>
+      <h2 id="notAnswered">0</h2>
+    </div>
+
+    <div class="card purple">
+      <div class="icon">✦</div>
+      <h4>Marked for Review</h4>
+      <h2 id="marked">0</h2>
+    </div>
+
+    <div class="card red">
+      <div class="icon">−</div>
+      <h4>Not Visited</h4>
+      <h2 id="notVisited">0</h2>
+    </div>
+  </div>
+
+  <div class="note">
+    Are you sure you want to submit for final marking?
+    <b>No changes will be allowed after submission</b>
+  </div>
+
+  <div class="buttons">
+    <button class="btn btn-no" onclick="goBack()">NO</button>
+    <button class="btn btn-yes" onclick="finalSubmit()">YES</button>
+  </div>
+
+</div>
+
+<script>
+window.onload = function () {
+  const examResult = JSON.parse(localStorage.getItem("examResult"));
+  if (!examResult) {
+    alert("Exam data not found!");
+    window.location.href = "exam.html";
+    return;
+  }
+
+  const { questions, answers, status } = examResult;
+
+  let total = questions.length;
+  let answered = 0;
+  let notAnswered = 0;
+  let marked = 0;
+  let notVisited = 0;
+
+  status.forEach((s, i) => {
+    if (s === "notVisited") notVisited++;
+    else if (s === "notAnswered") notAnswered++;
+    else if (s === "answered") answered++;
+    else if (s === "marked" && answers[i] === null) marked++;
+    else if (s === "answeredMarked") {
+      answered++;
+      marked++;
+    }
+  });
+
+  document.getElementById("totalQ").innerText = total;
+  document.getElementById("answered").innerText = answered;
+  document.getElementById("notAnswered").innerText = notAnswered;
+  document.getElementById("marked").innerText = marked;
+  document.getElementById("notVisited").innerText = notVisited;
+
+  const subject = localStorage.getItem("selectedSubject");
+  let subjectText = "";
+  if (subject === "gk") subjectText = "GK + Current Affairs";
+  else if (subject === "hindi") subjectText = "General Hindi";
+  else if (subject === "math") subjectText = "Math + Reasoning + Mental Aptitude";
+
+  document.getElementById("subjectName").innerText = subjectText;
+};
+
+function finalSubmit(){
+  window.location.href = "result.html";
+}
+function goBack(){
+  window.location.href = "exam.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>General Instructions | Shivang Testing Agency</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#0b1020;
+  --card:#151a2e;
+  --border:rgba(255,255,255,0.12);
+  --text:#e8ecf4;
+  --muted:#b7bfd6;
+  --green:#2ecc71;
+  --orange:#f39c12;
+  --purple:#9b59b6;
+  --gray:#9aa3b2;
+}
+
+*{box-sizing:border-box;font-family:Segoe UI,system-ui,sans-serif}
+
+body{
+  margin:0;
+  background:radial-gradient(80% 80% at 50% 0%,#141a3a,#070a14);
+  color:var(--text);
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 24px;
+  border-bottom:1px solid var(--border);
+}
+.brand h1{margin:0;font-size:20px}
+.brand small{color:var(--muted);font-size:12px}
+.lang{
+  background:#1a2040;
+  border:1px solid var(--border);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:10px;
+}
+
+/* MAIN */
+.wrap{
+  max-width:1050px;
+  margin:22px auto;
+  padding:0 16px;
+}
+.card{
+  background:linear-gradient(180deg,#171d38,#0e1328);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px 28px; /* ⬅ reduced */
+}
+
+/* TITLES */
+.title{
+  text-align:center;
+  font-size:24px;   /* ⬅ smaller */
+  letter-spacing:1px;
+}
+.subtitle{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+/* SECTIONS */
+.section{margin-bottom:18px}
+.section h3{
+  margin-bottom:8px;
+  font-size:16px;
+}
+ol{
+  padding-left:20px;
+  margin:0;
+}
+li{
+  margin-bottom:6px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+/* STATUS */
+.status-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px 40px;
+  margin-top:10px;
+}
+.status{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:14px;
+}
+.box{
+  width:14px;height:14px;border-radius:3px;
+}
+.nv{background:var(--gray)}
+.na{background:var(--orange)}
+.ans{background:var(--green)}
+.mark{background:var(--purple)}
+.am{background:#c77dff}
+
+/* TWO COLUMN */
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.warn{
+  color:#ff6b6b;
+  font-size:13px;
+  margin-top:8px;
+}
+
+/* FOOTER */
+.footer{
+  border-top:1px solid var(--border);
+  padding-top:12px;
+}
+.check{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+}
+.check input{width:16px;height:16px}
+
+.btn{
+  margin:14px auto 0;
+  display:block;
+  width:220px;      /* ⬅ smaller */
+  padding:10px;
+  border-radius:12px;
+  font-size:16px;
+  border:none;
+  background:#1f8f4d;
+  color:#fff;
+  cursor:pointer;
+}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="brand">
+    <h1>Shivang Testing Agency</h1>
+    <small>Excellence & Assessment</small>
+  </div>
+  <select class="lang">
+    <option>English</option>
+    <option>Hindi</option>
+  </select>
+</div>
+
+<div class="wrap">
+  <div class="card">
+
+    <div class="title">GENERAL INSTRUCTIONS</div>
+    <div class="subtitle">Please read the instructions carefully</div>
+
+    <div class="section">
+      <h3>General Instructions:</h3>
+      <ol>
+        <li>Total duration of CUET UG Examination is <b>60 minutes</b>.</li>
+        <li>The countdown timer will be displayed on the screen.</li>
+        <li>The Question Palette shows the status of each question:</li>
+      </ol>
+
+      <div class="status-grid">
+        <div class="status"><div class="box nv"></div>Not Visited</div>
+        <div class="status"><div class="box na"></div>Not Answered</div>
+        <div class="status"><div class="box ans"></div>Answered</div>
+        <div class="status"><div class="box mark"></div>Marked for Review</div>
+        <div class="status"><div class="box am"></div>Answered & Marked for Review</div>
+      </div>
+    </div>
+
+    <div class="section two">
+      <div>
+        <h3>Navigating to a Question:</h3>
+        <ol>
+          <li>Click on the question number in the Question Palette.</li>
+          <li>Click on <b>Save & Next</b> to save your answer.</li>
+          <li>Click on <b>Mark for Review & Next</b> if you want to review later.</li>
+        </ol>
+      </div>
+
+      <div>
+        <h3>Answering a Question:</h3>
+        <ol>
+          <li>Select one option by clicking the radio button.</li>
+          <li>To change answer, click another option.</li>
+          <li>Click <b>Clear Response</b> to remove your answer.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="warn">⚠ All questions will appear in your default language.</div>
+
+    <div class="footer">
+      <div class="check">
+        <input type="checkbox" id="agree" onchange="btn.disabled=!this.checked">
+        <label for="agree">I have read and understood all the instructions.</label>
+      </div>
+
+      <button class="btn" id="btn" disabled onclick="location.href='exam.html'">
+        PROCEED
+      </button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

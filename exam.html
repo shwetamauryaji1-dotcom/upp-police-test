@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shivang Testing Agency | CBT Exam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="exam.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <h2>Shivang Testing Agency</h2>
+    <span>Excellence & Assessment</span>
+  </div>
+
+  <div class="header-center">
+    Candidate : <b id="candName"></b> |
+    Exam : <b>UPP (Police)</b> |
+    Subject : <b id="subjectName"></b>
+  </div>
+
+  <div class="timer" id="timer">00:40:00</div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- QUESTION -->
+  <div class="card">
+    <div class="qno" id="qno">Question 1</div>
+    <div class="question" id="questionText"></div>
+
+    <div id="options"></div>
+
+    <div class="actions">
+      <button class="btn save" onclick="saveAndNext()">SAVE & NEXT</button>
+      <button class="btn review" onclick="markForReview()">SAVE & MARK FOR REVIEW</button>
+      <button class="btn next" onclick="markForReviewNext()">MARK FOR REVIEW & NEXT</button>
+      <button class="btn clear" onclick="clearResponse()">CLEAR</button>
+      <button class="btn submit" onclick="submitExam()">SUBMIT</button>
+    </div>
+  </div>
+
+  <!-- PALETTE -->
+  <div class="card">
+    <div class="palette-title">Question Palette</div>
+    <div class="legend">
+      🔴 Not Visited | 🟠 Not Answered | 🟢 Answered | 🟣 Marked | 🟣🟢 Answered & Marked
+    </div>
+    <div class="palette" id="paletteGrid"></div>
+  </div>
+
+</div>
+
+<script>
+  /* Candidate Name */
+  document.getElementById("candName").innerText = "Twinkle";
+
+  /* Subject handling – SAME LOGIC, ONLY TEXT DISPLAY */
+  const subject = localStorage.getItem("selectedSubject");
+
+  if(subject === "gk"){
+    document.getElementById("subjectName").innerText = "GK + CURRENT AFFAIRS";
+    document.write('<script src="data/gk.js"><\/script>');
+  }
+  else if(subject === "hindi"){
+    document.getElementById("subjectName").innerText = "GENERAL HINDI";
+    document.write('<script src="data/hindi.js"><\/script>');
+  }
+  else if(subject === "math"){
+    document.getElementById("subjectName").innerText = "MATH + REASONING + MENTAL APTITUDE";
+    document.write('<script src="data/math.js"><\/script>');
+  }
+</script>
+
+<script src="exam.js"></script>
+</body>
+</html>

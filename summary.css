@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+
+.header {
+  padding: 10px 20px;
+  border-bottom: 4px solid #0b4ea2;
+}
+
+#timer {
+  background: #1e90ff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.title {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.count {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* COLORS */
+.answered { color: #27ae60; }
+.notAnswered { color: #f39c12; }
+.marked { color: #8e44ad; }
+.answeredMarked { color: #8e44ad; }
+.notVisited { color: #c0392b; }
+
+/* CONFIRM */
+.confirm {
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 15px;
+}
+
+button {
+  padding: 10px 25px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #dcdcdc;
+}
+
+.no {
+  background: #ffffff;
+}
+
+/* FOOTER */
+footer {
+  background: #0b4ea2;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

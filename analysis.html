@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Answer Analysis</title>
+  <link rel="stylesheet" href="analysis.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <h2 id="qCount">Question 1</h2>
+
+  <div class="question-box">
+    <p id="questionText"></p>
+  </div>
+
+  <div class="options" id="options"></div>
+
+  <div class="correct-line" id="correctLine"></div>
+
+  <div class="topic" id="topic"></div>
+
+  <div class="explanation" id="explanation"></div>
+
+  <div class="nav-buttons">
+    <button onclick="prevQ()">⬅ Back</button>
+    <button class="next" onclick="nextQ()">Next ➡</button>
+    <button class="retry" onclick="retryTest()">🔄 Retry Test</button>
+  </div>
+
+</div>
+
+<script src="analysis.js"></script>
+</body>
+</html>

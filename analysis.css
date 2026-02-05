@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #1f4fd8;
+}
+
+.question-box {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.options div {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.correct {
+  background: #e6f4ea;
+  border-color: #38a169;
+  color: #256029;
+}
+
+.wrong {
+  background: #fdecea;
+  border-color: #e53e3e;
+  color: #7a1f1f;
+}
+
+.correct-line {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #256029;
+}
+
+.topic {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #222;
+}
+
+.explanation {
+  margin-top: 10px;
+  background: #fff7e6;
+  padding: 15px;
+  border-left: 4px solid #ed8936;
+  border-radius: 4px;
+}
+
+.nav-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.next {
+  background: #1f4fd8;
+  color: #fff;
+  border: none;
+}
+
+.retry {
+  background: #e53e3e;
+  color: #fff;
+  border: none;
+}

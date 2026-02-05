@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Performance Analysis</title>
+  <link rel="stylesheet" href="result.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1 class="title">Test Performance Analysis</h1>
+
+  <!-- TOP STATS -->
+  <div class="top-cards">
+    <div class="card blue">
+      <span>Total Questions</span>
+      <b id="totalQ">0</b>
+    </div>
+    <div class="card green">
+      <span>Correct</span>
+      <b id="correct">0</b>
+    </div>
+    <div class="card red">
+      <span>Wrong</span>
+      <b id="wrong">0</b>
+    </div>
+    <div class="card orange">
+      <span>Skipped</span>
+      <b id="skipped">0</b>
+    </div>
+  </div>
+
+  <!-- MID STATS -->
+  <div class="mid-cards">
+    <div class="mini">Total<br><b id="mTotal">0</b></div>
+    <div class="mini">Correct<br><b class="green-text" id="mCorrect">0</b></div>
+    <div class="mini">Wrong<br><b class="red-text" id="mWrong">0</b></div>
+    <div class="mini">Skipped<br><b class="orange-text" id="mSkipped">0</b></div>
+    <div class="score">
+      Final Score: <span id="scorePercent">0%</span>
+      <div class="bar">
+        <div id="scoreBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- TABLE -->
+    <table>
+      <thead>
+        <tr>
+          <th>Q. No.</th>
+          <th>Your Answer</th>
+          <th>Status</th>
+          <th>Correct Answer</th>
+        </tr>
+      </thead>
+      <tbody id="resultBody"></tbody>
+    </table>
+
+    <!-- RIGHT -->
+    <div class="right">
+
+      <div class="donut">
+        <div class="center" id="donutText">0%</div>
+      </div>
+
+      <div class="legend">
+        <div><span class="dot green"></span> Correct <b id="pCorrect">0%</b></div>
+        <div><span class="dot red"></span> Wrong <b id="pWrong">0%</b></div>
+        <div><span class="dot orange"></span> Skipped <b id="pSkipped">0%</b></div>
+      </div>
+
+      <!-- VIEW ANSWERS BUTTON (UPPER, VISIBLE) -->
+      <button class="view-btn" onclick="viewAnswers()">
+        🔍 View Your Answers
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<script src="result.js"></script>
+</body>
+</html>

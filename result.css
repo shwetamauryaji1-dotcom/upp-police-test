@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f8fb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 36px;
+  color: #1f4fd8;
+  margin-bottom: 20px;
+}
+
+/* TOP CARDS */
+.top-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.card {
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.card b {
+  font-size: 32px;
+  display: block;
+}
+
+.blue { background: #2b6cb0; }
+.green { background: #38a169; }
+.red { background: #e53e3e; }
+.orange { background: #ed8936; }
+
+/* MID */
+.mid-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.mini, .score {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.green-text { color: #38a169; }
+.red-text { color: #e53e3e; }
+.orange-text { color: #ed8936; }
+
+.bar {
+  height: 6px;
+  background: #ddd;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+.bar div {
+  height: 100%;
+  width: 0%;
+  background: #1f4fd8;
+  border-radius: 4px;
+}
+
+/* MAIN */
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+th {
+  background: #1f4fd8;
+  color: #fff;
+  padding: 10px;
+}
+
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.right {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* DONUT */
+.donut {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(#ed8936 100%, #eee 0);
+  margin: auto;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  inset: 40px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* LEGEND */
+.legend {
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dot.green { background: #38a169; }
+.dot.red { background: #e53e3e; }
+.dot.orange { background: #ed8936; }
+
+/* VIEW ANSWERS BUTTON */
+.view-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  background: #1f4fd8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background: #163bb5;
+}
